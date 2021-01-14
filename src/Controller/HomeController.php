@@ -15,6 +15,10 @@ class HomeController extends AbstractController
     public function index(GerichtRepository $gr)
     {
         $gerichte = $gr->findAll();
+        $zufall = array_rand($gerichte,2);
+
+        dump($gerichte[$zufall[0]]);
+        dump($gerichte[$zufall[1]]);
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
