@@ -3,8 +3,50 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<br>
-    <div class="container">
-        <h1>Willkommen im Restaurant</h1>
-    </div>
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{ gericht1.name }}</span></h2>
+								<p>Probiern Sie jetzt, {{gericht1.beschreibung}} für nur {{gericht1.preis}}!
+                                Exklusiv als Gericht des Tages. </p>
+								<a href="{{path('menu')}}" class="site-btn">Menükarte</a>
+								<a href="#" class="site-btn sb-c2">Bestellen</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="/bilder/{{gericht1.bild}}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hs-item">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="hs-text">
+								<h2><span>{{ gericht2.name }}</span></h2>
+								<p>Probiern Sie jetzt, {{gericht2.beschreibung}} für nur {{gericht2.preis}}!
+                                Exklusiv als Gericht des Tages. </p>
+								<a href="{{path('menu')}}" class="site-btn">Menükarte</a>
+								<a href="#" class="site-btn sb-c2">Bestellen</a>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="hr-img">
+								<img src="/bilder/{{gericht2.bild}}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
 {% endblock %}
