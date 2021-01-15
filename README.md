@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Restaurant
 =======
 ## Menükarte für Tablet in Restaurants Demo
@@ -30,4 +29,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
->>>>>>> master
+
