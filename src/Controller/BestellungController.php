@@ -21,7 +21,7 @@ class BestellungController extends AbstractController
         );
 
         return $this->render('bestellung/index.html.twig', [
-            'bestellung' => $bestellung
+            'bestellungen' => $bestellung
         ]);
     }
 
