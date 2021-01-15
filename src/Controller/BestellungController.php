@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Bestellung;
 use App\Entity\Gericht;
+use App\Repository\BestellungRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,10 +14,14 @@ class BestellungController extends AbstractController
     /**
      * @Route("/bestellung", name="bestellung")
      */
-    public function index(): Response
+    public function index(BestellungRepository $bestellungRepository)
     {
+        $bestellung = $bestellungRepository->findBy(
+            ['tisch' => 'tisch1']
+        );
+
         return $this->render('bestellung/index.html.twig', [
-            'controller_name' => 'BestellungController',
+            'bestellung' => $bestellung
         ]);
     }
 

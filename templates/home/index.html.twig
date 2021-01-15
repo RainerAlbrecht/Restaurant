@@ -15,7 +15,7 @@
 							    <p>Probiern Sie jetzt, {{gericht1.beschreibung}} für nur {{gericht1.preis}} EUR !
                                 Exklusiv als Gericht des Tages. </p>
 							    <a href="{{path('menu')}}" class="site-btn">Menükarte</a>
-							    <a href="#" class="site-btn sb-c2">Bestellen</a>
+							    <a href="{{path('bestellen',{id: gericht1.id})}}" class="site-btn sb-c2">Bestellen</a>
 							</div>
 						</div>
 						<div class="col-lg-6">
@@ -35,7 +35,7 @@
 								<p>Probiern Sie jetzt, {{gericht2.beschreibung}} für nur {{gericht2.preis}} EUR !
                                 Exklusiv als Gericht des Tages. </p>
 								<a href="{{path('menu')}}" class="site-btn">Menükarte</a>
-								<a href="#" class="site-btn sb-c2">Bestellen</a>
+								<a href="{{path('bestellen',{id: gericht2.id})}}" class="site-btn sb-c2">Bestellen</a>
 							</div>
 						</div>
 						<div class="col-lg-6">
