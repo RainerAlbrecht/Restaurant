@@ -8,7 +8,7 @@
     <br>
     <table class="table table-striped">
         <thead>
-            <tr><td>Bestell Nr.</td><td>Name</td><td>Preis</td><td>Status</td></tr>
+            <tr><td>Bestell Nr.</td><td>Name</td><td>Preis</td><td>Status</td><td></td></tr>
         </thead>
 
         <tbody>
@@ -19,12 +19,29 @@
                     <td>{{bestellung.name}}</td>
                     <td>{{bestellung.preis}}</td>
                     <td>{{bestellung.status}}</td>
+                    <td>
+                        <div class="dropdown show">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{bestellung.status}}
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{path('status',{id: bestellung.id, status: 'offen'}) }}">offen</a>
+                            <a class="dropdown-item" href="{{path('status',{id: bestellung.id, status: 'fertig'}) }}">fertig</a>
+                            <a class="dropdown-item" href="{{path('status',{id: bestellung.id, status: 'archiv'}) }}">archiv</a>
+                        </div>
+                        </div>
+                    </td>
+                    <td>
+                    <a class="btn btn-outline-danger btn-sm" href="{{path('loeschen',{id: bestellung.id})}}" 
+                    role="button">Entfernen</a>
+                    </td>
                 </tr>
             {% endfor %}
             <tr>
                 <td></td><td></td>
                 <td>{{summe}} EUR</td>
-                <td></td>
+                <td></td><td></td>
             </tr>
         </tbody>
     </table>

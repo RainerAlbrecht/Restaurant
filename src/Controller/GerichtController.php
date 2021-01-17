@@ -69,6 +69,10 @@ class GerichtController extends AbstractController
         $gericht = $gr->find($id);
         $em->remove($gericht);
         $em->flush();
+
+        // message
+        $this->addFlash('erfolg','das Gericht wurde erfolgreich entfernt');
+
         return $this->redirect($this->generateUrl('gericht.bearbeiten'));
     }
 

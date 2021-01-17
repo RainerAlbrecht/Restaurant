@@ -41,4 +41,30 @@ class BestellungController extends AbstractController
         $this->addFlash('bestell', $bestellung->getName(). ' wurde zur Bestellung hinzugefügt');
         return $this->redirect($this->generateUrl('menu'));
     }
+
+    /**
+     * @Route("/status/{id},{status}", name="status")
+     */
+    public function status($id,$status) {
+        $em = $this->getDoctrine()->getManager();
+        $bestellung = $em->getRepository(Bestellung::class)->find($id);
+        $bestellung->setStatus($status);
+        $em->flush();
+        return $this->redirect($this->generateUrl('bestellung'));
+    }
+
+    /**
+     * @Route("/loeschen/{id}", name="loeschen")
+     */
+    public function entfernen($id, BestellungRepository $br) {
+        $em = $this->getDoctrine()->getManager();
+        $bestellung = $br->find($id);
+        $em->remove($bestellung);
+        $em->flush();
+        
+        // message
+        $this->addFlash('erfolg','die Bestellung wurde erfolgreich entfernt');
+
+        return $this->redirect($this->generateUrl('bestellung'));
+    }
 }
