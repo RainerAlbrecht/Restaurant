@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     bilder_ordner: '%kernel.project_dir%/public/bilder'
+    # Dump the Service Container into a Single File
+    container.dumper.inline_factories: true
 
 services:
     # default configuration for services in *this* file
