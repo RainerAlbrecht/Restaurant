@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Dein Restaurant | Menükarte</title>
+	<title>Dein Restaurant | Menükarte </title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Restaurant HTML Template">
 	<meta name="keywords" content="music, html">
@@ -70,23 +70,6 @@
 	<!-- Header section end -->
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
-	<!-- Intro section -->
-	<section class="intro-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="section-title">
-						<h2>All you can eat für 19.95 €</h2>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<p>Das Restaurant bietet für 19,95 € pro Person folgendes Konzept an: Zunächst könnt ihr aus vielen verschiedenen Salatvariationen, kalten und warmen Vorspeisen am Vorspeisenbuffet frei wählen. Anschließend serviert das Personal mehr als zehn verschiedene Fleischvariationen, solange ihr möchtet. Als Abschluss wartet dann das Dessertbuffet mit frischen und hausgemachten Leckereien auf euch.</p>
-					<a href="{{path('menu')}}" class="site-btn">Try it now</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Intro section end -->
 	<!-- Footer section -->
 	<footer class="footer-section">
 		<div class="container">
@@ -119,7 +102,7 @@
 								<h2>Kontakt</h2>
 								<ul>
 									<li><a href="">Kellner</a></li>
-									<li><a href="">Impressum</a></li>
+									<li><a href="{{path('impressum')}}">Impressum</a></li>
 									<li><a href="">Login</a></li>
 								</ul>
 							</div>
